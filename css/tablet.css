@@ -1,0 +1,56 @@
+#left p {
+	margin-right:505px;
+	font-size:3.5em;
+	margin-top:-2.5em;
+}
+
+.detail-work-outter {
+	padding:12px;
+}
+
+.right-mobile {
+	display:inherit;
+/*
+	border-bottom:1px solid rgba(0, 0, 05, .10);
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, .05);
+*/
+}
+
+.right-mobile p.philosophy {
+	margin-top:0px;
+	font-size:11px;
+	margin-bottom:20px;
+}
+
+.right-mobile p.logos {
+	margin:0px;
+}
+
+#banner-wrapper {
+	position:relative;
+	margin-top:0px
+}
+
+#left p {
+	top:50%;
+	margin-top:-1.5em;
+}
+
+.lostinspace {
+	margin-top:-1068px !important; /* super important */
+	transform:scale(.75, .75);
+	-moz-transform:scale(.75, .75);
+	-webkit-transform:scale(.75, .75);
+}
+
+#menu-wrapper ul {
+	margin-top:-18%;	
+}
+
+a#nous {
+	position:absolute;
+}
+
+#menu-icon {
+	position:absolute;
+}

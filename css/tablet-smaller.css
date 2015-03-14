@@ -1,0 +1,203 @@
+#banner-wrapper {
+	position:relative;
+	margin-top:0px
+}
+
+#left {
+	position:relative;
+	display:block;
+	width:100%;
+}
+
+#right {
+	position:relative;
+	display:block;
+	width:100%;
+	height:400px;
+}
+
+.detail-work-outter {
+	padding:5px;
+}
+
+#right {
+	float:none;
+	display:none;	
+}
+
+#left p {
+	line-height:1em: /* 1em */
+}
+
+.right-mobile {
+	display:inherit;
+	border-bottom:1px solid rgba(0, 0, 05, .10);
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, .05);
+}
+
+.right-mobile p.philosophy {
+	margin-top:0px;
+	font-size:11px;
+	margin-bottom:20px;
+}
+
+.right-mobile p.logos {
+	margin:0px;
+}
+
+#banner-wrapper {
+	position:relative;
+	margin-top:0px
+}
+
+.item { 
+	width: 100%; 
+	padding-top:50%;
+	padding-bottom:50%;
+	background-size: 100% auto;
+	background-repeat:no-repeat;	
+}
+
+.item.quarter { 
+	width: 100%;
+	padding-top:50%;
+	padding-bottom:50%;
+}
+
+.item.thin {
+	width:100%;
+	padding-top:27%;
+	padding-bottom:27%;
+}
+
+.item.tall {
+	padding-top:59.5%;
+	padding-bottom:59.5%;
+}
+
+/* INFO TEXT STYLES */
+.info-all-mobile {
+	display:inherit;
+	padding:75px;
+}
+
+.info-mobile {
+	display:inherit;
+	padding:0px;
+	margin-bottom:150px;
+}
+
+.info-all-mobile h3 {
+	font-size:1.65em; /* 1.15em */
+	letter-spacing:.12em;
+}
+
+.info-all-mobile p.client {
+	font-size:1.2em; /* .825em */
+}
+
+.info-all-mobile p.description {
+	font-size:1em; /* .825em; */
+}
+
+.info-all-mobile a.fullproject {
+	font-size:1em;
+}
+
+/*
+
+a.fullproject {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, .0);
+}
+*/
+
+.nobot {
+	margin-bottom:0px;
+}
+
+#work-container {
+	background-image:none;
+}
+
+.mobilebgfix {
+	display:inherit;
+}
+
+.letstalk {
+	margin-left:25px;
+	max-width:85%;
+}
+
+.nobg {
+	background-color:none;
+	background:none;
+	padding:0px;
+	margin:0px;
+	padding-top:85px;
+	padding-bottom:75px;
+	
+}
+
+
+
+.info-mobile ul {
+	text-align:center;
+	font-family:"kepler-std-display", georgia, serif;
+	font-weight:lighter;
+	font-size:1.5em;
+	list-style:none;
+	margin:0px;
+	padding:0px;
+	width:100%;
+}
+
+.info-mobile ul li {
+	margin:0px;
+	margin-left:-13px;
+	margin-bottom:25px;
+	width:100%;
+}
+
+.info-mobile ul li:last-child {
+	margin-bottom:0px;
+}
+
+.info-mobile ul li a {
+	padding:15px;
+	display:inline-block;
+	color:#fff;
+	text-decoration:none;
+	width:100%;
+}
+
+.info-mobile ul li a:hover {
+	background-color:rgba(29, 207, 176, 1.0);
+	font-style:italic;
+	font-weight:normal;
+}
+
+.fade {
+	display:none;
+	opacity:0.0;
+}
+
+.franklin2 {
+	display:none;
+}
+
+.hubble2 {
+	display:none;
+}
+
+#menu-wrapper ul {
+	margin-top:-26%;	
+}
+
+.lostinspace {
+	margin-top:-2975px !important; /* super important */
+	transform:scale(.75, .75);
+	-moz-transform:scale(.75, .75);
+	-webkit-transform:scale(.75, .75);
+}
+
+

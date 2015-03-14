@@ -1,0 +1,1012 @@
+<html lang="en" class="wf-keplerstddisplay-i3-active wf-keplerstddisplay-i4-active wf-keplerstddisplay-i6-active wf-keplerstddisplay-i7-active wf-keplerstddisplay-n4-active wf-keplerstddisplay-n6-active wf-keplerstddisplay-n7-active wf-active"><head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chelsea Dega-Hassler's Portfolio</title>
+
+<link rel="stylesheet" media="screen and (min-width: 0px) and (max-width: 9999px)" href="css/main.css" type="text/css">
+<link rel="stylesheet" media="screen and (min-width: 1450px) and (max-width: 9999px)" href="css/larger.css" type="text/css">
+<link rel="stylesheet" media="screen and (min-width: 861px) and (max-width: 1000px)" href="css/tablet.css" type="text/css">
+<link rel="stylesheet" media="screen and (min-width: 0px) and (max-width: 860px)" href="css/tablet-smaller.css" type="text/css">
+<link rel="stylesheet" media="screen and (min-width: 0px) and (max-width: 640px)" href="css/mobile.css" type="text/css">
+
+
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/packery.pkgd.min.js"></script>
+<script type="text/javascript" src="js/jquery.gsap.min.js"></script>
+<script type="text/javascript" src="js/TweenMax.min.js"></script>
+
+
+<!-- BANNER = WINDOW HEIGHT -->
+<script type="text/javascript">
+document.addEventListener("touchstart", function(){}, true); /* TAP COLOR IPHONE */
+
+
+
+
+
+	/* WHOA, A BIG MESS STARTS HERE - IM NOT A REAL DEVELOPER BUT IM TRYING TO LEARN BECAUSE CODING IS WHERE IT'S AT */
+	$(function(){
+		
+		$('.load-top').addClass("loadindicator");
+		
+		
+		/* PRELOADER */
+		$(window).load(function(){
+			$("#intro").addClass("intro-in");
+			$('#preloader').addClass("no-opacity");
+			$('#nous').addClass("nous-menu-in");
+			$('#menu-icon').addClass("nous-menu-in");		
+		});
+		
+		
+		/* MENU ICON */		
+		$('#menu-icon').click(function(){
+			$('.line1').toggleClass("rotate1")
+			$('.line2').toggleClass("rotate2")
+			$('.line3').toggleClass("rotate3")
+			$('#menu-icon').toggleClass("clicked");
+			$('#menu-wrapper').toggleClass("menu-in");
+			$('#menu-controller').toggleClass("lostinspace topfix");
+			$('#nous').toggleClass("mobilenousfix");
+			
+			$('#menu-wrapper ul').fadeIn("800");
+			$('.list1').toggleClass("in-1");
+			$('.list2').toggleClass("in-2");
+			$('.list3').toggleClass("in-3");
+			$('.list4').toggleClass("in-4");
+			$('.list5').toggleClass("in-5");
+		});
+
+		/* EVERYTHING ELSE... :( */
+		$('#thumbs-container').packery({
+			itemSelector: '.item',
+			gutter: 0
+		});
+		
+		$('#nous').click(function(){
+			$('html, body').animate({scrollTop: 0}, 300);
+		});
+		
+	    var windowH = $(window).height();
+	    var wrapperH = $('#banner-wrapper').height();
+	    var differenceH = windowH - wrapperH;
+	    var newH = wrapperH + differenceH;
+	    var truecontentH = $('#truecontent').height();
+	    var leftH = $('#right').height()-150;
+	    var wWidth = $(window).width();
+	    var leftW = wWidth - 430;
+	    var detailW = wWidth - 580;
+	
+	     
+	    $('#left').css('width', (leftW)+'px');
+	    $('body').css('padding-top', (windowH)+'px');
+	    $('#banner-wrapper').css('margin-top', -(windowH)+'px');
+	    $('#detail-popup-container').css('width', (detailW)+'px');
+	    
+	    if(windowH > wrapperH) {                            
+	        $('#banner-wrapper').css({'height':($(window).height())+'px'});
+	    }   
+	    
+	    if(windowH > leftH) {
+		   $('#right').css({'height':($(window).height())-150+'px'}); 
+	    }
+	    
+	    if(wWidth > leftW) {
+		    $('#left').css('width', (leftW)+'px');   
+	    }
+	    
+	    /* COVER ANIMATION */
+	
+	    
+	
+	                                                                                
+	
+	    $(window).resize(function(){
+	        windowH = $(window).height();
+	        wrapperH = $('#banner-wrapper').height();
+	        differenceH = windowH - wrapperH;
+	        newH = wrapperH + differenceH;
+	        truecontentH = $('#truecontent').height();
+	        wWidth = $(window).width();
+			leftW = wWidth - 430;
+			detailW = wWidth - 580;
+			
+			$('body').css('padding-top', (windowH)+'px');
+			$('#banner-wrapper').css('margin-top', -(windowH)+'px');
+			$('#detail-popup-container').css('width', (detailW)+'px');
+	        
+	        if(windowH > truecontentH) {
+	            $('#banner-wrapper').css('height', (newH)+'px');
+	            $('#right').css('height', (newH)-150+'px');
+	        } 
+	        
+	        if (wWidth > 1000) {
+		        if(wWidth > leftW) {
+			        $('#left').css('width', (leftW)+'px');
+			        $('#detail-popup-container').css('width', (detailW)+'px');
+			    }
+	        } else {
+	        	$('#left').attr('style','');
+	        }        
+	    });
+	
+		
+		if (wWidth > 863) {
+			$('.item').click(function(){			
+				$('#thumbs-container').removeClass("thumb-container-out").addClass("thumb-container-fade");
+				$('#info-container').removeClass("info-out").addClass("info-in");
+				$('html,body').animate({scrollTop: $("#thumbs-container").offset().top}, 200);	
+				$('#detail-popup-container').removeClass("detail-out").addClass("detail-in");
+				$('#nous').removeClass("menu-nous-in-quick").addClass("no-opacity-quick");
+				$('#menu-icon').removeClass("menu-nous-in-quick").addClass("no-opacity-quick");
+				$('.fade').addClass('nohover');
+
+			
+			});
+			
+			
+			/* WORK CLICK TO SHOWS */
+				
+
+			
+				
+				
+				
+				
+				$('#thumbs-container').packery();
+				
+				
+$('.hmtextile').click(function(){
+					$('.work-hmtextile').fadeIn('fast');
+					$('.info-hmtextile').fadeIn('fast');
+					$('#work-container').css('height', $('.hmtextile-height').height()+158);
+				});
+
+				
+		
+$('.selfreliance').click(function(){
+					$('.work-selfreliance').fadeIn('fast');
+					$('.info-selfreliance').fadeIn('fast');
+					$('#work-container').css('height', $('.selfreliance-height').height()+158);
+				});
+				
+				
+				$('.hubble1, .hubble2').click(function(){
+					$('.work-hubble').fadeIn('fast');
+					$('.info-hubble').fadeIn('fast');
+					$('#work-container').css('height', $('.hubble-height').height()+158);
+				});
+				
+				
+				$('.donkey-app').click(function(){
+					$('.work-donkey').fadeIn('fast');
+					$('.info-donkey').fadeIn('fast');
+					$('#work-container').css('height', $('.donkey-height').height()+158);
+				});
+				
+								
+				$('.timeline-app').click(function(){
+					$('.work-timeline').fadeIn('fast');
+					$('.info-timeline').fadeIn('fast');
+					$('#work-container').css('height', $('.timeline-height').height()+158);
+				});
+					
+						
+				$('.gifsome').click(function(){
+					$('.work-gifsome').fadeIn('fast');
+					$('.info-gifsome').fadeIn('fast');
+					$('#work-container').css('height', $('.gifsome-height').height()+158);
+				});
+							
+						
+				$('.americanseating').click(function(){
+					$('.work-americanseating').fadeIn('fast');
+					$('.info-americanseating').fadeIn('fast');
+					$('#work-container').css('height', $('.americanseating-height').height()+158);
+				});
+									
+						
+				$('.kcareers').click(function(){
+					$('.work-kcareers').fadeIn('fast');
+					$('.info-kcareers').fadeIn('fast');
+					$('#work-container').css('height', $('.kcareers-height').height()+158);
+				});
+											
+						
+				$('.heinz').click(function(){
+					$('.work-heinz').fadeIn('fast');
+					$('.info-heinz').fadeIn('fast');
+					$('#work-container').css('height', $('.heinz-height').height()+158);
+				});
+													
+						
+				$('.franklin1, .franklin2').click(function(){
+					$('.work-franklin').fadeIn('fast');
+					$('.info-franklin').fadeIn('fast');
+					$('#work-container').css('height', $('.franklin-height').height()+158);
+					});
+																
+						
+				$('.ccs').click(function(){
+					$('.work-ccs').fadeIn('fast');
+					$('.info-ccs').fadeIn('fast');
+					$('#work-container').css('height', $('.ccs-height').height()+158);
+				});
+																
+						
+				$('.makeit-app').click(function(){
+					$('.work-makeit-app').fadeIn('fast');
+					$('.info-makeit-app').fadeIn('fast');
+					$('#work-container').css('height', $('.makeit-app-height').height()+158);
+				});
+
+
+
+							
+				
+				$('.closex').click(function(){
+					$('#info-container').addClass("info-out");
+					$('#thumbs-container').addClass("thumb-container-out").removeClass("thumb-container-fade");
+					$('#detail-popup-container').removeClass("detail-in").addClass("detail-out");
+					$('a#nous').removeClass("no-opacity-quick").addClass("menu-nous-in-quick");
+					$('.fade').removeClass('nohover');
+					$('#work-container').css('height', 'auto');
+					$('.work-item').fadeOut(800);
+					$('.info-all').fadeOut(800);
+					$('#menu-icon').removeClass("no-opacity-quick").addClass("menu-nous-in-quick");		
+				});
+		
+					
+		} // END IF > 863 
+			
+		
+		if(wWidth < 999) {
+			$('#left').css('width', (wWidth)+'px');
+	
+		}
+		
+		
+		
+		$(window).scroll(function(){    
+	  	  if ($(this).scrollTop() > windowH){ 
+	        $('#info-container').addClass('stick'); 
+			}
+			
+			else{
+	  	      $('#info-container').removeClass('stick');
+	  		}
+		});
+	
+	});
+
+
+</script>
+
+
+</head>
+ 
+<body style="padding-top: 325px;">
+
+
+
+<!-- LOAD -->
+<div id="preloader" class="no-opacity">
+	<div class="load-top loadindicator">Chelsea Dega-Hassler</div>
+	<div class="load-base">Chelsea Dega-Hassler</div>
+</div>
+
+
+<!-- MENU -->
+<a href="javascript:void(0)" id="nous" class="nous-menu-in">Chelsea Dega-Hassler</a>
+
+<div id="menu-icon" class="nous-menu-in">
+	<span class="line1"></span>
+	<span class="line2"></span>
+	<span class="line3"></span>
+</div>
+
+
+<div id="menu-wrapper">
+	<ul>
+	   <li class="list1"><a href="assets/ChelseaHasslerUXResume.pdf" target="_blank">Résumé</a></li>
+	   <li class="list2"><a href="mailto:chelseauxd@gmail.com">Email</a></li>
+	   <li class="list4"><a href="https://www.linkedin.com/in/chelseaux" target="_blank">LinkedIn</a></li>
+	   <li class="list5"><a href="http://www.twitter.com/chels_UX" target="_blank">Twitter</a></li>
+	</ul>
+
+	<div class="menu-overlay"></div>
+</div>
+
+
+
+
+
+<div id="intro" class="intro-in">
+<div id="menu-controller">
+
+
+<!-- CONTENT START -->
+
+<div id="banner-wrapper" style="margin-top: -325px; height: 325px;">
+		
+	<div id="left" style="width: 912px;">
+		<p class="yellow">Iterate and conquer.</p>
+	</div>
+	
+	<div id="right" style="height: 175px;">
+		<div class="philosophy-center">
+			<!-- PHILOSOPHY INFO -->
+				<p class="philosophy yellow">Philosophy</p>
+		<p class="logos yellow">
+			I'm a User Experience strategist and designer specializing in user engagement and gamification. My UX style is bold, lean, rapidly iterative collaborative design. My background is in research and cybernetics. I have a BA in Political Science from The Colorado College, before which I was a pre-med/neuroscience student and did epidemiological research. Post-bacc, I graduated from General Assembly's UXDI program. 
+			<br>
+			<br>
+
+
+			Brands I've worked with include Tongal, a disruptive advertising platform with a  70,000+ user base.  I'm socially conscious, having volunteered over 1,500 hours for various causes I believe in, most notably children's organizations. My hobbies include doing art, surfing, hiking, going to hackathons and traveling. My favorite podcast is RadioLab and the book I'm currently reading is Hooked by Nir Eyal. </p></div>
+	</div>
+		
+</div>
+
+
+<div id="work-container">
+	
+
+	
+	
+	<div id="thumbs-container" style="position: relative; height: 3609.90625px;">
+	  
+	 <!-- MOBILE ONLY RIGHT -->
+	 <div class="item info-mobile nobot" style="position: absolute; left: 0px; top: 0px;">
+		  	  
+	  	<div class="info-all-mobile right-mobile">
+		<!-- -- MOBILE PHILOSOPHY INFO ---->
+		</div>
+	  
+	  </div>
+
+
+
+	  
+	  <!-- HM TEXTILE -->
+	  <div class="item tall hmtextile" data-project-id="hmtextile" style="position: absolute; left: 0px; top: 0px;">
+	  		<span class="fade"></span>
+	  </div>
+
+	  
+	  
+	  <div class="item info-mobile" style="position: absolute; left: 678px; top: 0px; transition-property: transform, opacity; -webkit-transition-property: transform, opacity; transition-duration: 0.4s; -webkit-transition-duration: 0.4s; transform: translate3d(-7px, 0px, 0px);">
+		  	  
+	  	<div class="info-all-mobile info-hmtextile-mobile">
+		  	<!-- HMTEXTILE INFO -->
+		</div>
+	  
+	  </div>
+	  
+	  
+	  
+	  
+	  
+	  <!-- SELF RELIANCE -->
+	  <div class="item selfreliance" data-project-id="selfreliance" style="position: absolute; left: 671px; top: 0px;">
+	  		<span class="fade"></span>
+	  </div>
+	     
+	  
+	  
+	  <div class="item info-mobile" style="position: absolute; left: 678px; top: 678px; transition-property: transform, opacity; -webkit-transition-property: transform, opacity; transition-duration: 0.4s; -webkit-transition-duration: 0.4s; transform: translate3d(-7px, -7px, 0px);">
+		  	  
+	  	<div class="info-all-mobile info-selfreliance-mobile">
+		  	<!-- SELF RELIANCE INFO -->
+		</div>
+	  
+	  </div>
+	  
+	  
+	  
+	  
+	  <!-- HUBBLE -->
+	  <div class="item quarter hubble1" data-project-id="hubble" style="position: absolute; left: 671px; top: 671px;">
+	  		<span class="fade"></span>
+	  </div>
+	  
+	  <div class="item quarter hubble2" data-project-id="hubble" style="position: absolute; left: 1006px; top: 671px;">
+	  		<span class="fade"></span>
+	  </div>
+	  
+	 
+	  	  
+	  <div class="item info-mobile" style="position: absolute; left: 0px; top: 800px; transition-property: transform, opacity; -webkit-transition-property: transform, opacity; transition-duration: 0.4s; -webkit-transition-duration: 0.4s; transform: translate3d(0px, -8.25px, 0px);">
+		  	  
+	  	<div class="info-all-mobile info-hubble-mobile">
+		  	<!-- HUBBLE INFO -->
+		</div>
+	  
+	  </div>
+	  
+	  
+	  
+	  
+	  <!-- TIMELINE -->
+	  <div class="item thin timeline-app" data-project-id="timeline" style="position: absolute; left: 0px; top: 791px;">
+	  		<span class="fade"></span>
+	  </div>
+	  	  	  
+	  
+	  <div class="item info-mobile" style="position: absolute; left: 678px; top: 1017px; transition-property: transform, opacity; -webkit-transition-property: transform, opacity; transition-duration: 0.4s; -webkit-transition-duration: 0.4s; transform: translate3d(-7px, -10.5px, 0px);">
+		  	  
+	  	<div class="info-all-mobile info-timeline-mobile">
+		  	<!-- TIMELINE INFO -->
+		</div>
+	  
+	  </div>
+
+	 	  
+	 
+	 
+	 
+	 <!-- DONKEY -->	
+	 <div class="item tall donkey-app" data-project-id="donkey" style="position: absolute; left: 671px; top: 1006px;">
+	  		<span class="fade"></span>	  
+	  </div>  
+	
+	  
+	  <div class="item info-mobile" style="position: absolute; left: 0px; top: 1153px; transition-property: transform, opacity; -webkit-transition-property: transform, opacity; transition-duration: 0.4s; -webkit-transition-duration: 0.4s; transform: translate3d(0px, -12.34375px, 0px);">
+		  	  
+	  	<div class="info-all-mobile info-donkey-mobile">
+		  	<!-- DONKEY INFO -->
+		</div>
+	  
+	  </div>
+	  	  	  
+	  
+	  
+	
+	 
+	  <!-- AMERICAN SEATING -->
+	  <div class="item americanseating" data-project-id="americanseating" style="position: absolute; left: 0px; top: 1140px;">		  	  
+	  		<span class="fade"></span>
+	  </div>  
+	
+	  
+	  <div class="item info-mobile" style="position: absolute; left: 678px; top: 1818px; transition-property: transform, opacity; -webkit-transition-property: transform, opacity; transition-duration: 0.4s; -webkit-transition-duration: 0.4s; transform: translate3d(-7px, -19.75px, 0px);">
+		  	  
+	  	<div class="info-all-mobile info-americanseating-mobile">	
+		<!-- AMERICAN SEATING INFO -->
+		</div>
+	  
+	  </div>
+
+	  
+	  
+	  
+	  	 
+	 <!-- K CAREERS -->
+	  <div class="item kcareers" data-project-id="kcareers" style="position: absolute; left: 671px; top: 1798px;">		  	  
+	  		<span class="fade"></span>
+	  </div>  
+	
+	  
+	  <div class="item info-mobile" style="position: absolute; left: 0px; top: 1831px; transition-property: transform, opacity; -webkit-transition-property: transform, opacity; transition-duration: 0.4s; -webkit-transition-duration: 0.4s; transform: translate3d(0px, -19.34375px, 0px);">
+		  	  
+	  	<div class="info-all-mobile info-kcareers-mobile">
+		  	<!-- KCAREERS INFO -->
+		</div>
+	  
+	  </div>
+	 	  	  
+	  	  	 	  	  		  	 
+	  	  	    
+	  
+	  
+	  <!-- FRANKLIN -->
+	  <div class="item quarter franklin2" data-project-id="franklin" style="position: absolute; left: 0px; top: 1811px;">
+	  		<span class="fade"></span>
+	  </div>
+	  
+	  <div class="item quarter franklin1" data-project-id="franklin" style="position: absolute; left: 335px; top: 1811px;">
+	  		<span class="fade"></span>
+	  </div>
+	  
+	 
+	  	  
+	  <div class="item info-mobile" style="position: absolute; left: 0px; top: 2171px; transition-property: transform, opacity; -webkit-transition-property: transform, opacity; transition-duration: 0.4s; -webkit-transition-duration: 0.4s; transform: translate3d(0px, -23.84375px, 0px);">
+		  	  
+	  	<div class="info-all-mobile info-franklin-mobile">
+			<!-- -- FRANKLIN INFO ---->				
+		</div>
+	  
+	  </div>
+	 	 	  	  	  
+
+	  	
+	  	 
+	 <!-- KELLOGG APP -->
+	
+	 
+	 <!-- GIFSOME -->
+	  <div class="item tall gifsome" data-project-id="gifsome" style="position: absolute; left: 671px; top: 2469px;">		  
+	  		<span class="fade"></span>	  
+	  </div>  
+	
+	  
+	  <div class="item info-mobile" style="position: absolute; left: 0px; top: 2849px; transition-property: transform, opacity; -webkit-transition-property: transform, opacity; transition-duration: 0.4s; -webkit-transition-duration: 0.4s; transform: translate3d(0px, -30.84375px, 0px);">
+		  	  
+	  	<div class="info-all-mobile info-gifsome-mobile"> -->
+		  	<!-- GIFSOME INFO -->
+		</div>
+	  
+	  </div>
+	 	  	  
+
+	  	
+	  	 
+	 <!-- CROSS CULTURAL SOLUTIONS -->
+	  <div class="item tall ccs" data-project-id="ccs" style="position: absolute; left: 0px; top: 2818px;">		  	  
+	  		<span class="fade"></span>
+	  </div>  
+	
+	  
+	  <div class="item info-mobile" style="position: absolute; left: 678px; top: 3297px; transition-property: transform, opacity; -webkit-transition-property: transform, opacity; transition-duration: 0.4s; -webkit-transition-duration: 0.4s; transform: translate3d(-7px, -36px, 0px);">
+		  	  
+	  	<div class="info-all-mobile info-ccs-mobile">
+		  	<!-- CCS INFO -->
+		</div>
+	  
+	  </div>	  
+
+	  
+	  
+	  	
+	  	 
+	 <!-- HEINZ -->
+	  <div class="item thin heinz" data-project-id="heinz" style="position: absolute; left: 671px; top: 3261px;">		  	  
+	  		<span class="fade"></span>
+	  </div>  
+	
+	  
+	  <div class="item info-mobile nobot" style="position: absolute; left: 0px; top: 3650px; transition-property: transform, opacity; -webkit-transition-property: transform, opacity; transition-duration: 0.4s; -webkit-transition-duration: 0.4s; transform: translate3d(0px, -40.09375px, 0px);">
+		  	  
+	  	<div class="info-all-mobile info-heinz-mobile">
+		  	<!-- HEINZ INFO -->
+		</div>
+	  
+	  </div>
+
+	  
+	  
+	  
+	  
+	  
+	 <!-- END OF MOBILE -->	
+	
+	
+	</div><!-- /END PROJECTS -->
+	
+	
+	
+	
+	
+	<!-- HIDDEN RIGHT INFO PANEL -->
+	<div id="info-container" class="">
+		<div class="closex"></div>
+				
+		
+		<!-- HMTEXTILE -->
+		<div class="info-hmtextile info-all">
+			<!-- HMTEXTILE INFO -->
+					<h3>4ce</h3>
+			<p class="role">Curated Mirco-Workout Wearable-Linked Website &amp; App</p>
+			
+			<span class="blockspacer"></span>
+			
+			<p class="description">
+				Problem: The majority of American women living in poverty are clinically overweight. Many lack the monetary and educational resources necessary to maintain a gym membership, purchase workout equipment, or keep up to date with the best health and wellness practices.
+Solution: An app that sends women curated micro-workouts tailored to their fitness level and wellness goals an timed intervals throughout the day. Each workout is based on state-of-the-art HIIT (High Intensity Interval Training) research and aims to raise women’s basal metabolic rate through appropriately spaced workouts lasting no more than 4 minutes. The workouts are composed of natural body resistance exercises that can be done anywhere with no equiptment. 
+To increase make 4CE (pronounced “force”) more fun to use, and thus increase user retention &amp; the likelihood users will meet their fitness goals, we incorporated gasification aspects such as a leaderboard, stat tracking, and a time-sensitive point system algorithm for completing tasks. As as additional feature (one’s score is not negatively impacted by not using this feature) 4CE may be linked to one’s Jawbone wearable, to more specifically track progress.
+4CE was born at Code 4 Health, a hackathon co-sponsored by The Clinton Foundation, Jawbone, Self magazine and Ace Hotels.
+
+4CE Presentation (link)
+4CE.xyz
++Waterfall project management picture
+#Wearables #Biohacking #SocialJustice #Women #ClintonFoundation #AceHotel #Jawbone #Gamification #Fitness 
+			</p>
+			
+			<a href="https://dribbble.com/HelloimCody/projects/224913-Healthcare-Textiles" target="blank" class="fullproject firstright">Dribbble Project</a> <a href="http://www.healthcaretextiles.com/" target="_blank" class="fullproject">View the Live Site</a></div>
+		
+		
+		<!-- SELF RELIANCE -->
+		<div class="info-selfreliance info-all">
+			<!-- SELF RELIANCE INFO -->
+					<h3>Tongal</h3>
+			<p class="role">iOS Native Application</p>
+			
+			<span class="blockspacer"></span>
+			
+			<p class="description">
+				We gamified and revamped Tongal's mobile voting app to make to drive up KPIs like user retention, user engagement and frequency of voting and tagging. We're instituted innovative interaction design and melded it with UX best practices and motivational psychology to create a fresh, easy-to-use and addictive app. 
+Features of the app included badges, a leaderboard, variable earned rewards, animations and actual cash prizes for top Tongies. 
++Link to annotated user flow
+Tongal’s Lead UX person, Scott McDowell, wrote an article about it here: https://www.linkedin.com/pulse/user-experience-product-management-mentoring-scott-m
+#MotivationPsychology #Tongal #NativeiOS #Voting #Advertising #Disruptive #Gamification #Mobile
+			</p>
+			
+			<a href="assets/TongalFlow.pdf" target="_blank" class="fullproject">Full Project</a>	</div>
+
+					<!-- HUBBLE -->
+		<div class="info-hubble info-all">
+			<!-- HUBBLE INFO -->
+					<h3>Connectsy</h3>
+			<p class="role">Etsy.com additional feature pitch</p>
+			
+			<span class="blockspacer"></span>
+			
+			<p class="description">
+				 A responsive webpage linked to Etsy’s main site that connects artisans to potential buyers, allowing buyers to request specific items, negotiate price, and order custom items in a timely, manageable, delightful way.
+We crafted a platform that was simple and straightforward to use,  promoted person-to-person interaction, created a forum for creative expression and allowed both parties to feel empowered and heard throughout the process. 
+Truly understanding our users and coming up with a strong, overarching user narrative were crucial to our success on this project.
+Link to Muse Project
+#PeerEconomy #Esty #ECommerce #Crafts #Homemade
+			</p>
+			
+			<!-- <a href="#" class="fullproject">Dribbble Project</a> --></div>
+	
+			
+		<!-- TIMELINE -->
+		<div class="info-timeline info-all">
+			<!-- TIMELINE INFO -->
+					<h3>True Spirit</h3>
+			<p class="role">E-Commerce website design exersice </p>
+			
+			<span class="blockspacer"></span>
+			
+			<p class="description">
+				Problem: A school uniform company for children wishes to appeal to frugal, fashion-conscious shoppers and needs an E-commerce platform that reflects the brand’s modern &amp; light aesthetic. 
+Solution: A minimalist, spirited school uniform website that offers  parents and administrators a simple and efficient way to get the correct uniform for their children. It features intuitive navigation, an easy &amp; secure checkout process and a modern feel.
+
+#ECommerce #Retail #Website
+
+			</p>
+			
+			<a href="https://dribbble.com/HelloimCody/projects/143813-Timeline-App" target="_blank" class="fullproject">Dribbble Project</a>	</div>
+				
+		
+		<!-- DONKEY -->
+		<div class="info-donkey info-all">
+			<!-- DONKEY INFO -->
+					<h3>Savatron</h3>
+			<p class="role">Children's Fiscal Responsibility Toy &amp; App</p>
+			
+			<span class="blockspacer"></span>
+			
+			<p class="description">
+				Problem: How do we encourage fiscal responsibility in children under 12?
+A physical product & software idea similar to a Tamagotchi. Our toy is a small oval that clips onto children’s backpacks. The home screen starts with an egg that hatches into one of many characters depending on the children’s savings category. The character is linked to the child’s saving account and grows as the child makes deposits. The parents & child can set incremental savings goals. As these are met, the character “levels up”, gaining new features or powers. The tool is social, and children can battle other children’s characters. 
+
+Savatron was concieved at a UX summit sponsored by Idean, a Finnish creative agency. 
+#Idean #FiscalResponsibility #Gamification #KidsTech #BrainHacking </p>
+			
+			<a href="https://dribbble.com/HelloimCody/projects/211636-Donkey" class="fullproject">View the full project on Dribbble</a>	</div>
+	
+					
+		
+		<!-- K CAREERS -->
+		<div class="info-kcareers info-all">
+			<!-- KCAREERS INFO -->
+					<h3>KELLOGG CAREERS</h3>
+			<p class="role">Roles: Concept, Wireframe &amp; Design</p>
+			
+			<span class="blockspacer"></span>
+			
+			<p class="description">
+				While at Biggs | Gilmore (now <a href="http://www.vml.com" target="_blank">VML</a>) I worked on a pitch to redesign the Kellogg careers website. My idea was to personalize the corporate experience. High energy, colorful and friendly. By showcasing images of actual employees on the homepage and having them double as secondary navigation to keys sections, we would create an inviting environment for current and future employees. Utilizing color schemes and fonts from the Kellogg branding, I redesigned the page to include similar content as before with some re-prioritization.  
+			</p>
+			
+			<a href="https://dribbble.com/HelloimCody/projects/144571-Kellogg-Careers-Pitch" target="_blank" class="fullproject">Dribbble Project</a>	</div>
+		
+					
+		
+		<!-- GIFSOME -->
+		<div class="info-gifsome info-all">
+			<!-- GIFSOME INFO -->
+					<h3>GIFSOME</h3>
+			<p class="role">Roles: Concept, Wireframe &amp; Design</p>
+			
+			<span class="blockspacer"></span>
+			
+			<p class="description">
+				Animated GIFs are taking the internet by storm and I was frustrated with the inability to easily send them through iMessages on my iPhone. The process is sometimes mysterious and lengthy and near impossible for your less tech-savvy friends. I wanted an easier way. Bouncing ideas off of a co-worker at lunch, I wire-framed Gifsome on a napkin and started design shortly after. The app would tie in with <a href="http://www.giphy.com" target="_blank">Giphy's</a> api and use the same organization that they'd come up with.  The app would be simple, click and hold to preview animation and a single tap would copy the image to your clipboard so you can paste it in a message quickly.
+			</p></div>
+			
+					
+		
+		<!-- AMERICAN SEATING -->
+		<div class="info-americanseating info-all">
+			<!-- AMERICAN SEATING INFO -->
+					<h3>Walk-a-Dog</h3>
+			<p class="role">Uber for dog walking</p>
+			
+			<span class="blockspacer"></span>
+			
+			<p class="description">
+				This was a rapid prototyping project. The timeline was one week to ideate &amp; present an interactive prototype of a mobile application. The deliverables suite for this project included user interviews, heuristic evaluation, task analysis, competitive / comparative analysis, sketches, clickable prototype and a presentation.  
+Problem: It can be difficult to find an available, dependable, trustworthy dog walker in one’s neighborhood. It can also be frustrating to schedule, or re-schedule, dog walking times.
+Solution: An app that allows you to find, connect with and schedule sessions with available dog walkers in your neighborhood based on proximity, rating, and availability.
+#Mobile #OnDemandEconomy </p>
+			
+			<a href="https://dribbble.com/shots/1613967-American-Seating-Furniture" target="_blank" class="fullproject firstright">Dribbble Project</a> 
+			<a href="http://www.americanseating.com" target="_blank" class="fullproject">View the Live Site</a>	</div>
+		
+					
+					
+		
+		<!-- CCS -->
+		<div class="info-ccs info-all">
+			<!-- CCS INFO -->
+					<h3>FUNDRAISER</h3>
+			<p class="role">Roles: Wireframe &amp; Design</p>
+			
+			<span class="blockspacer"></span>
+			
+			<p class="description">
+				I was looking for a way to travel abroad and help people in need and came across <a href="http://www.Crossculturalsolutions.com" target="_blank">Crossculturalsolutions.com</a>. I realized this is no free ride and started to design an idea that take user account information and generate a small fundraising platform for them. It seems like a great idea to create a page for the user that they could spread around to generate funds quickly and receive support. I emailed these designs to the CEO and he loved them, assuring me that they would take these ideas into account when redesigning that page during the year.
+			</p>
+			
+			<a href="https://dribbble.com/HelloimCody/projects/143809-Fund-Raiser-Mini-Site" target="_blank" class="fullproject">Dribbble Project</a>	</div>
+			
+					
+					
+		
+		<!-- KELLOGG'S APP -->
+		<div class="info-makeit-app info-all">
+			<!-- MAKE IT INFO -->
+					<h3>MAKE IT</h3>
+			<p class="role">Roles: Concept, Design &amp; Proposal </p>
+			
+			<span class="blockspacer"></span>
+			
+			<p class="description">
+				Co-leading a team of coworkers while at Biggs | Gilmore (now <a href="vml.com" target="_blank">VML</a>) we were tasked with thinking of a new way to use an existing Kellogg project. Our concept was to introduce a DIY mentality to the cereal isle. We would Allow the consumer to create their own piece of art on a blank box and share it with their social spaces, using a specially created app. Kellogg would then select several winning designs at the end of the promotion and mass produce those designs on special edition boxes. Our idea won an internal competition, and selected to be presented at Kellogg's open pitch day in 2013.
+			</p>
+			
+			<a href="#" class="fullproject">Dribbble Project</a></div>
+				
+					
+					
+		
+		<!-- FRANKLIN -->
+		<div class="info-franklin info-all">
+			<!-- -- FRANKLIN INFO ---->
+					<h3>FRANKLIN POSTERS</h3>
+			<p class="role">Roles: Concept &amp; Design</p>
+			
+			<span class="blockspacer"></span>
+			
+			<p class="description">
+				The concept for these posters was to visualize our companies core values. My initial idea was to create posters that incorporated different historical figures or characters from pop-culture to visually explain these values. Starting with the value "Make it better" and having read Benjamin Franklin's auto-biography the year prior, I knew he was the perfect representation of this value. During his life he was an apprentice printer, a statesman, scientist, inventor, postmaster, &amp; swim instructor, just to name a few. In everything he did, he continually worked to make it better in one way or another.
+			</p></div>
+						
+					
+					
+		
+		<!-- HEINZ -->
+		<div class="info-heinz info-all">
+
+					<h3>Heinz Redesign</h3>
+			<p class="role">Roles: Wireframe &amp; Design</p>
+			
+			<span class="blockspacer"></span>
+			
+			<p class="description">
+				While at the agency Biggs | Gilmore (now <a href="http://www.vml.com" target="blank">VML</a>) I was tasked with redesigning the Heinz 57 homepage. Given requirements and hierarchy by a UX team member, I started sketching out my own wireframes. One of the client goals was to include push their featured recipes using vivd imagery. Running with this idea I designed a page that would envelope the user in an 'experience'. I wanted to make an emotional connection to the user using imagery of recipes and landscapes that would change with the season. These scenes would stimulate the users and convey the feeling of what it's like to be in that setting or cook the featured dishes.
+			</p>
+			
+			<a href="https://dribbble.com/HelloimCody/projects/149867-Heinz-Pitch" target="_blank" class="fullproject">Dribbble Project</a></div>
+		
+		
+	
+	
+	
+	</div><!-- END RIGHT INFO PANEL -->
+
+
+
+
+
+
+	
+	<div id="detail-popup-container" style="width: 762px;">			
+		<!-- LOAD IN DETAIL VIEWS AFTER PAGE -->		
+			<div class="hmtextile-height">
+			<div class="work-item work-hmtextile">
+				<img src="images/hmtextile-detail-old.jpg">	
+			</div>
+			
+			<div class="work-item work-hmtextile">
+				<img src="images/hmtextile-detail1.jpg">	
+			</div>
+					
+			<div class="work-item work-hmtextile">
+				<img src="images/hmtextile-detail2.jpg">	
+			</div>
+					
+			<div class="work-item work-hmtextile">
+				<img src="images/hmtextile-detail3.jpg">	
+			</div>
+	
+		</div>	
+		
+		
+		
+		
+		<div class="selfreliance-height">
+			<div class="work-item work-selfreliance">
+				<img src="images/tongal4.jpg">	
+			</div>
+			
+			<div class="work-item work-selfreliance">
+				<img src="images/tongal.jpg">	
+			</div>
+			
+			<div class="work-item work-selfreliance">
+				<img src="images/tongal2.jpg">	
+			</div>
+	
+				
+			<div class="work-item work-selfreliance">
+				<img src="images/tongal5.jpg">	
+			</div>
+		</div>
+		
+		
+		
+		<div class="hubble-height">
+			<div class="work-item work-hubble">
+				<img src="images/hubble-detail1.jpg">		
+			</div>
+			
+			<div class="work-item work-hubble">
+				<img src="images/hubble-detail2.jpg">	
+			</div>
+		</div>
+		
+		
+		
+		<div class="donkey-height">
+			<div class="work-item work-donkey">
+				<img src="images/donkey-app-detail1.jpg">	
+			</div>
+		</div>	
+		
+		
+		
+		<div class="timeline-height">
+			<div class="work-item work-timeline">
+				<img src="images/timeline-app-detail1.jpg">	
+			</div>
+		</div>
+			
+		
+		
+		<div class="gifsome-height">
+			<div class="work-item work-gifsome">
+				<img src="images/gifsome1.jpg">	
+			</div>
+			
+			<div class="work-item work-gifsome">
+				<img src="images/gifsome2.jpg">	
+			</div>
+			
+			<div class="work-item work-gifsome">
+				<img src="images/gifsome3.jpg">	
+			</div>
+		</div>
+					
+		
+		
+		
+		<div class="americanseating-height">
+			<div class="work-item work-americanseating">
+				<img src="images/americanseating-detail1.jpg">	
+			</div>
+			
+			<div class="work-item work-americanseating">
+				<img src="images/americanseating-detail2.jpg">	
+			</div>
+			
+			<div class="work-item work-americanseating">
+				<img src="images/americanseating-detail6.jpg">	
+			</div>
+			
+			<div class="work-item work-americanseating">
+				<img src="images/americanseating-detail3.jpg">	
+			</div>
+			
+			<div class="work-item work-americanseating">
+				<img src="images/americanseating-detail4.jpg">	
+			</div>
+			
+			<div class="work-item work-americanseating">
+				<img src="images/americanseating-detail5.jpg">	
+			</div>
+		</div>
+		
+		
+				
+		
+		<div class="kcareers-height">
+			<div class="work-item work-kcareers">
+				<img src="images/kellogg-detail1.jpg">	
+			</div>
+			
+			<div class="work-item work-kcareers">
+				<img src="images/kellogg-detail2.jpg">	
+			</div>
+									
+			<div class="work-item work-kcareers">
+				<img src="images/kellogg-detail3.jpg">	
+			</div>
+		</div>	
+		
+			
+				
+		
+		<div class="heinz-height">
+			<div class="work-item work-heinz">
+				<img src="images/awesomeUXshit.jpg">	
+			</div>
+			
+			<div class="work-item work-heinz">
+				<img src="images/heinz-detail2.jpg">	
+			</div>
+		</div>	
+				
+			
+				
+		
+		<div class="franklin-height">
+			<div class="work-item work-franklin">
+				<img src="images/franklin-detail1.jpg">	
+			</div>
+			
+			<div class="work-item work-franklin">
+				<img src="images/franklin-detail2.jpg">	
+			</div>
+			
+			<div class="work-item work-franklin">
+				<img src="images/franklin-detail3.jpg">	
+			</div>
+			
+			<div class="work-item work-franklin">
+				<img src="images/franklin-detail4.jpg">	
+			</div>
+		</div>	
+		
+			
+				
+		
+		<div class="ccs-height">
+			<div class="work-item work-ccs">
+				<img src="images/ccs-detail1.jpg">	
+			</div>
+		</div>	
+		
+		<div class="makeit-app-height">
+			<div class="work-item work-makeit-app">
+				<img src="images/makeit-app-detail1.jpg">	
+			</div>
+			
+			<div class="work-item work-makeit-app">
+				<img src="images/makeit-app-detail2.jpg">	
+			</div>
+		</div>	</div>
+
+</div>
+
+<div class="mobilebgfix"></div><!-- END MOBILE BG FIX -->
+
+
+</div><!-- /MENU CONTROLLER -->
+</div><!-- /INTRO -->
+
+</body></html>
